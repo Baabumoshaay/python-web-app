@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home Page</title>
+  </head>
+  <body>
+    <h1>List of Routes</h1>
+    <ul>
+      {% for route in routes %}
+        <li>{{ route }}</li>
+      {% endfor %}
+    </ul>
+    
+    <h1>Vehicle Information</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Vehicle</th>
+          <th>Status</th>
+          <th>Security Team</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for vehicle, status in vehicles.items() %}
+          <tr>
+            <td>{{ vehicle }}</td>
+            <td>{{ status }}</td>
+            <td>{{ teams.get(vehicle, 'N/A') }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    
+    <h1>Add a Route</h1>
+    <form action="/add_route" method="POST">
+      <input type="text" name="route" required>
+      <button type="submit">Add Route</button>
+    </form>
+    
+    <h1>Remove a Route</h1>
+    <form action="/remove_route" method="POST">
+      <select name="route">
+        {% for route in routes %}
+          <option value="{{ route }}">{{ route }}</option>
+        {% endfor %}
+      </select>
+      <button type="submit">Remove Route</button>
+    </form>
+  </body>
+</html>

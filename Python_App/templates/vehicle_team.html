@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ vehicle }} Team</title>
+  </head>
+  <body>
+    <h1>{{ vehicle }} Team</h1>
+    <p>Current Team: {{ team }}</p>
+    <form action="/vehicle_team/{{ vehicle }}" method="POST">
+      <label for="team">Assign Team:</label>
+      <input type="text" name="team" id="team">
+      <button type="submit">Assign</button>
+    </form>
+  </body>
+</html>
