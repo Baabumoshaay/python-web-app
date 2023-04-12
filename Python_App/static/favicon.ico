@@ -1,8 +1,0 @@
-my_project/
-    app.py
-    static/
-        favicon.ico
-    templates/
-        home.html
-        vehicle_status.html
-        vehicle_team.html
