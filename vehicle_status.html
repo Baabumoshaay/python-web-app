@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ vehicle }} Status</title>
+  </head>
+  <body>
+    <h1>{{ vehicle }} Status</h1>
+    <p>Current Status: {{ status }}</p>
+    <form action="/vehicle_status/{{ vehicle }}" method="POST">
+      <label for="status">Update Status:</label>
+      <input type="text" name="status" id="status">
+      <button type="submit">Update</button>
+    </form>
+  </body>
+</html>
